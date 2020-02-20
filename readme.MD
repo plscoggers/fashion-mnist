@@ -1,6 +1,6 @@
 # Fashion MNIST
 ## Introduction
-A series of experiments were conducted to design a network that performed the best on the Fashion MNIST dataset found here
+This respository hosts a list experiments were conducted to design a network on the [Fashion MNIST dataset](https://github.com/zalandoresearch/fashion-mnist)
 
 ## Network Design
 The network is 3 convolutions + 1 FC layer and has about 400K parameters.  It's not based off of any model in particular, just given the small image shape out of the box solutions such as VGG would have been difficult.  Also, the goal of this was to make a reasonable model.  The model size is like 1.6MB and inference takes on average 4.3ms.  
@@ -18,7 +18,7 @@ I used an Adam optimizer with a high learning rate, to help converge faster.  I 
 The best performing network ended up being Avg pooling with dropout and no batch normalization
 
 ## Observations and Conclusions
-1.  Batch size of 64 and 128 seemed to have little impact, but a batch size of 32 did appear to be detrimental.
+1.  Changing batch size between 64 and 128 seemed to have little impact, but a batch size of 32 did appear to be detrimental.
 2.  Max pooling results were a lot worse with dropout than Avg pooling.  This is probably due to max pooling dropping a lot of data already.
 3.  Batch normalization had little effect, but this is likely due to an error on my part where I did not remove the bias from the convolutional layers.
 
